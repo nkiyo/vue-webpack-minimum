@@ -1,8 +1,10 @@
 - production/development
   - Update webpack
-- [x] ソースマップ
 - elementをつかう
-- 複数エントリポイントに対応
 - vue devtool
-- vscode
+- debug on vscode
+  --  wepack dev serverにつなぐ
 - いろんなloaderためす
+  - ts
+- [x] ソースマップ
+- [x] 複数エントリポイントに対応
