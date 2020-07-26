@@ -1,16 +1,16 @@
 <template>
-<div id="app">
-  <p>hello {{ who }}</p>
-</div>
+  <div id="app">
+    <p>hello {{ who }}</p>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'app',
+  name: "app",
   data() {
     return {
-      who: 'monk studio'
-    }
+      who: "monk studio"
+    };
   }
-}
+};
 </script>
