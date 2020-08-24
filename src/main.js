@@ -15,10 +15,14 @@ const store = new Vuex.Store({
   },
   mutations: {
     increment (state) {
-      state.cntObj[Math.floor(Date.now() / 1000)] = state.count
-      state.cntObj2["latestCnt"] = state.count
-      state.cntList.push(state.count)
-      state.cntList2[0] = state.count
+      //state.cntObj[Math.floor(Date.now() / 1000)] = state.count // caveat
+      //Vue.set(state.cntObj, Math.floor(Date.now() / 1000), state.count) // reactive
+      //state.cntObj2["latestCnt"] = state.count // caveat
+      //Vue.set(state.cntObj, "LatestCnt", state.count) // reactive
+      //state.cntObj2 = { ...state.cntObj2, latestCnt: state.count } // ビルドエラー
+      //state.cntList.push(state.count) // NOT caveat
+      //state.cntList2[0] = state.count // caveat
+      //Vue.set(state.cntList2, 0, state.count) // reactive
       state.count++
     }
   }
