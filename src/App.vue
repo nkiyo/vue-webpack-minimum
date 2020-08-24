@@ -3,7 +3,11 @@
     <p>hello {{ who }}</p>
     <p>hello {{ reversedWho }}</p>
     <p>vuex counter is {{ vuexCounter }}</p>
-    <button @click="onclick">hoge</button>
+    <p>vuex cntList is {{ vuexCntList }}</p>
+    <p>vuex cntList2 is {{ vuexCntList2 }}</p>
+    <p>vuex cntObj is {{ vuexCntObj }}</p>
+    <p>vuex cntObj2 is {{ vuexCntObj2 }}</p>
+    <button @click="onclick">hage</button>
   </div>
 </template>
 
@@ -29,7 +33,23 @@ export default {
       // TODO 複雑なオブジェクトの更新を検知して、
       // 加工して返す
       return this.$store.state.count;
-    }
+    },
+    vuexCntList: function() {
+      return this.$store.state.cntList;
+    },
+    vuexCntList2: function() {
+      return this.$store.state.cntList2;
+    },
+    vuexCntObj: function() {
+      //const obj = this.$store.state.cntObj;
+      //return obj
+      return this.$store.state.cntObj;
+    },
+    vuexCntObj2: function() {
+      //const obj2 = this.$store.state.cntObj2;
+      //return obj2
+      return this.$store.state.cntObj2;
+    },
   },
   methods: {
     onclick: function() {
