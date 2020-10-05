@@ -13,6 +13,9 @@
 
 <script>
 import {MyClass} from './myclass'
+import difference from 'lodash-es/difference'
+import get from 'lodash-es/get'
+import set from 'lodash-es/set'
 export default {
   name: "app",
   data: function() {
@@ -60,6 +63,15 @@ export default {
       this.items.push(123) // なんの警告もなし
       //console.log(`${this.items.length}`)
       //console.log(`${mc.getS()}`)
+
+      // lodash-es sample
+      console.log(`lodash-es difference ${difference([3, 2, 1], [1, 2])}`)
+      let object = { 'a': [{ 'b': { 'c': 3 } }] };
+      console.log(`lodash-es get ${get(object, 'a[0].b.c')}`) // => 3
+      console.log(`lodash-es get ${get(object, 'a[1].b.c')}`) // => undefined
+      console.log(`lodash-es get ${get(object, 'a[0].b.d')}`) // => undefined
+      set(object, 'a[0].b.c', 4)
+      console.log(`lodash-es set result ${get(object, 'a[0].b.c')}`) // => 4
     }
   }
 };
